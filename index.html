@@ -17,8 +17,7 @@
 
         $(function ()
         {
-            document.addEventListener("deviceready", function ()
-            {
+
                 io.Socket.prototype.isXDomain = function () { return false; };
                 
                 var socket = io.connect('http://192.168.1.101/widgetClients');
@@ -26,7 +25,7 @@
                 socket.on('onTestStarted', onTestStarted);
 
                 $("#nodeData").text("Stuff will go here");
-            });
+
         } ());
 
     </script>
