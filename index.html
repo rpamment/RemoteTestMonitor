@@ -1,45 +1,48 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>Page Title</title>
-    <script src="scripts/jquery-1.6.4.js" type="text/javascript"></script>
-    <script src="scripts/jquery.mobile-1.0.1.min.js" type="text/javascript"></script>
-    <script src="http://192.168.1.101/socket.io/socket.io.js" type="text/javascript"></script>
-    <link rel="Stylesheet" href="style/jquery.mobile-1.0.1.min.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript">
+    <head>
+        <title>Page Title</title>
+        <script src="scripts/jquery-1.6.4.js" type="text/javascript"></script>
+        <script src="scripts/jquery.mobile-1.0.1.min.js" type="text/javascript"></script>
+        <script src="http://192.168.1.101/socket.io/socket.io.js" type="text/javascript"></script>
+        <link rel="Stylesheet" href="style/jquery.mobile-1.0.1.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script type="text/javascript">
 
-        // Handles the wideget moved event
-        function onTestStarted(data)
-        {
-            $("#nodeData").text("The test is : " + data.Test);
-        }
+            // Handles the wideget moved event
+            function onTestStarted(data)
+            {
+                $("#nodeData").text("The test is : " + data.Test);
+            }
 
-        $(function ()
-        {
+            $(function ()
+            {
+                document.addEventListener("deviceready", function ()
+                {
+ //                   io.Socket.prototype.isXDomain = function () { return false; };
 
-                io.Socket.prototype.isXDomain = function () { return false; };
-                
-                var socket = io.connect('http://192.168.1.101/widgetClients');
+ //                   var socket = io.connect('http://192.168.1.101/widgetClients');
 
-                socket.on('onTestStarted', onTestStarted);
+ //                   socket.on('onTestStarted', onTestStarted);
 
-                $("#nodeData").text("Stuff will go here");
+                    $("#nodeData").text("Stuff will go here");
+                });
+            } ());
 
-        } ());
-
-    </script>
-</head>
-<body>
-    <div>
-        <ul data-role="listview" data-divider-theme="e">
-            <li data-theme="c">
-                <h3>Node data</h3>
-                <p style="height: 100px; border: 1px solid black" id="nodeData"></p>
-            </li>
-        </ul>
-    </div>
-    <div data-theme="a" data-role="footer">
-    </div>
-</body>
+        </script>
+    </head>
+    <body>
+        <div>
+            <ul data-role="listview" data-divider-theme="e">
+                <li data-theme="c">
+                    <h3>
+                        Node data</h3>
+                    <p style="height: 100px; border: 1px solid black" id="nodeData">
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div data-theme="a" data-role="footer">
+        </div>
+    </body>
 </html>
