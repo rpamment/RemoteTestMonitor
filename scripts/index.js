@@ -15,7 +15,12 @@ var app = {
     },
     connect: function (id)
     {
-        navigator.notification.alert("hello", "world");
+        io.Socket.prototype.isXDomain = function () { return false; };
+
+        var socket = io.connect('http://192.168.1.101/widgetClients');
+
+        socket.on('onTestStarted', app.onTestStarted);
+
         $("#nodeData").text("Stuff will go here");
     },
     onTestStarted: function (data)
