@@ -21,12 +21,12 @@ var app = {
 
         socket.on('onTestStarted', app.onTestStarted);
 
-        $("#nodeData").text("Stuff will go here");
+        $("#runningTest").text("Stuff will go here");
     },
     onTestStarted: function (data)
     {
         // Handles the test started event
 
-        $("#nodeData").text("The test is : " + data.Test);
+        $("#runningTest").text("The test is : " + data.Test);
     }
 };
