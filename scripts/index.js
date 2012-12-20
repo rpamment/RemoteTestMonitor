@@ -15,7 +15,7 @@ var app = {
     },
     connect: function (id)
     {
-        alert(id);
+        navigator.notification.alert("hello", "world");
         $("#nodeData").text("Stuff will go here");
     },
     onTestStarted: function (data)
