@@ -17,7 +17,7 @@ var app = {
     {
  //       io.Socket.prototype.isXDomain = function () { return false; };
 
-        var socket = io.connect('http://pihub-robsway.rhcloud.com:8000/piClients');
+        var socket = io.connect('http://pihub-robsway.rhcloud.com:8080/piClients');
 
         socket.on('onTestStarted', app.onTestStarted);
 
