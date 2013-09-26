@@ -17,11 +17,11 @@ var app = {
     {
         io.Socket.prototype.isXDomain = function () { return false; };
 
-        var socket = io.connect('http://pihub-robsway.rhcloud.com/8000');
+        var socket = io.connect('http://pihub-robsway.rhcloud.com:8000/piClients');
 
         socket.on('onTestStarted', app.onTestStarted);
 
-        $("#runningTest").text("Stuff will go here");
+        $("#runningTest").text("This has been updated!");
     },
     onTestStarted: function (data)
     {
